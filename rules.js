@@ -25,12 +25,23 @@ class Location extends Scene {
     }
 
     handleChoice(choice) {
-        if(choice) {
+        if (choice && !choice.Target) {
+            this.engine.show("&gt; "+choice.Text);
+            this.engine.gotoScene(Mechanism, choice);
+        }else if(choice) {
             this.engine.show("&gt; "+choice.Text);
             this.engine.gotoScene(Location, choice.Target);
         } else {
             this.engine.gotoScene(End);
         }
+    }
+}
+
+class Mechanism extends Location {
+    create(key) {
+        let MechData = this.engine.storyData.Locations[key.Source][key.Destination];
+        this.engine.show(MechData[(Math.floor(Math.random() * MechData.length))]);
+        this.engine.gotoScene(Location, key.Source);
     }
 }
 

@@ -1,5 +1,5 @@
 {
-    "Title": "Haunted Mansion",
+    "Title": "Haunted",
     "Credits": "Created by Jack Wilhelm (jgwilhel@ucsc.edu).",
     "InitialLocation": "Foyer",
     "Locations": {
@@ -39,8 +39,18 @@
                 {
                     "Text": "Foyer",
                     "Target": "Foyer"
+                },
+                {
+                    "Text": "Library",
+                    "Target": "Library"
+                },
+                {
+                    "Text": "Hit a random key",
+                    "Source": "Piano Room",
+                    "Destination": "HitARandomKey"
                 }
-            ]
+            ],
+            "HitARandomKey": ["You hear an ominous low sound eminate from the pianos chords.", "You hear a little, shrieking note from the piano.", "You hear a long, draining sound echo from the piano."]
         },
         "Bathroom": {
             "Body": "A small mold-ridden room with a toilet and a broken cuboard",
@@ -65,13 +75,63 @@
             ]
         },
         "Dining Room": {
-            "Body": "A small mold-ridden room with a toilet and a broken cuboard",
+            "Body": "An old table is surrounded by 6 chairs.",
             "Choices": [
                 {
                     "Text": "Pool Room",
                     "Target": "Pool Room"
+                },
+                {
+                    "Text": "Kitchen",
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "Bedroom",
+                    "Target": "Bedroom"
+                },
+                {
+                    "Text": "Library",
+                    "Target": "Library"
                 }
             ]
+        },
+        "Kitchen": {
+            "Body": "Rusty pots and pans hang from the walls and cabnites filled with rotting smells.",
+            "Choices": [
+                {
+                    "Text": "Dining Room",
+                    "Target": "Dining Room"
+                }
+            ]
+        },
+        "Bedroom": {
+            "Body": "A queensized bed sits in the back of the room with holes torn in the covers.",
+            "Choices": [
+                {
+                    "Text": "Dining Room",
+                    "Target": "Dining Room"
+                }
+            ]
+        },
+        "Library": {
+            "Body": "Dust covered books eaten away by time line countless stacking shelves.",
+            "Choices": [
+                {
+                    "Text": "Dining Room",
+                    "Target": "Dining Room"
+                },
+                {
+                    "Text": "Piano Room",
+                    "Target": "Piano Room"
+                },
+                {
+                    "Text": "Secret Exit",
+                    "Target": "Secret Exit"
+                }
+            ]
+        },
+        "Secret Exit": {
+            "Body": "You exit through a hidden doorway in the library to someplace much, much worse."
         }
     }
 }
