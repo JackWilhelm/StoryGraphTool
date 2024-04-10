@@ -1,58 +1,77 @@
 {
-    "Title": "Campus Life on the West Side",
-    "Credits": "Created by Adam Smith (amsmith@ucsc.edu).",
-    "InitialLocation": "Kresge",
+    "Title": "Haunted Mansion",
+    "Credits": "Created by Jack Wilhelm (jgwilhel@ucsc.edu).",
+    "InitialLocation": "Foyer",
     "Locations": {
-        "Kresge": {
-            "Body": "This is Kresge College, lots of nice trees.",
+        "Foyer": {
+            "Body": "You stand in a room full of old shoes, trash, and a small hole in the wall.",
             "Choices": [
                 {
-                    "Text": "South",
-                    "Target": "Porter"
-                }
-            ]
-        },
-        "Porter": {
-            "Body": "This is Porter College, the trees are nice here too.",
-            "Choices": [
-                {
-                    "Text": "North",
-                    "Target": "Kresge"
+                    "Text": "Living Room",
+                    "Target": "Living Room"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Rachel Carson"
+                    "Text": "Piano Room",
+                    "Target": "Piano Room"
                 }
             ]
         },
-        "Rachel Carson": {
-            "Body": "Rachel Carson College, more sun and fewer trees.",
+        "Living Room": {
+            "Body": "You see dusty chairs and sofas on creaking wooden boards.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Porter"
+                    "Text": "Foyer",
+                    "Target": "Foyer"
                 },
                 {
-                    "Text": "South",
-                    "Target": "Oakes"
+                    "Text": "Bathroom",
+                    "Target": "Bathroom"
+                },
+                {
+                    "Text": "Pool Room",
+                    "Target": "Pool Room"
                 }
             ]
         },
-        "Oakes": {
-            "Body": "Oakes College, even the buildings have tree bark on them.",
+        "Piano Room": {
+            "Body": "In this room you see a lonesome piano collecting dust. If you listen close enough, you can still hear the faint echos of a playful tune.",
             "Choices": [
                 {
-                    "Text": "North",
-                    "Target": "Rachel Carson"
-                },
-                {
-                    "Text": "South",
-                    "Target": "Beyond"
+                    "Text": "Foyer",
+                    "Target": "Foyer"
                 }
             ]
         },
-        "Beyond": {
-            "Body": "Grass, don't forget to check for ticks!"
+        "Bathroom": {
+            "Body": "A small mold-ridden room with a toilet and a broken cuboard",
+            "Choices": [
+                {
+                    "Text": "Living Room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Pool Room": {
+            "Body": "Cushioned chairs border the room with a dustry green pool table resting in the center with and unfinished game.",
+            "Choices": [
+                {
+                    "Text": "Living Room",
+                    "Target": "Living Room"
+                },
+                {
+                    "Text": "Dining Room",
+                    "Target": "Dining Room"
+                }
+            ]
+        },
+        "Dining Room": {
+            "Body": "A small mold-ridden room with a toilet and a broken cuboard",
+            "Choices": [
+                {
+                    "Text": "Pool Room",
+                    "Target": "Pool Room"
+                }
+            ]
         }
     }
 }
