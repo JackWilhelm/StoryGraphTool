@@ -62,7 +62,8 @@
             ]
         },
         "Pool Room": {
-            "Body": "Cushioned chairs border the room with a dustry green pool table resting in the center with and unfinished game.",
+            "Body": "Cushioned chairs border the room with a dusty green pool table. Resting in the center is a lonely 8-ball.",
+            "Body2": "Cushioned chairs border the room with a dusty green pool table.",
             "Choices": [
                 {
                     "Text": "Living Room",
@@ -71,6 +72,13 @@
                 {
                     "Text": "Dining Room",
                     "Target": "Dining Room"
+                },
+                {
+                    "Text": "Take 8-Ball",
+                    "Response": "You take the 8-ball.",
+                    "Unlocks": "Secret Exit",
+                    "Source": "Pool Room",
+                    "Available": "True"
                 }
             ]
         },
@@ -131,7 +139,8 @@
             ]
         },
         "Secret Exit": {
-            "Body": "You exit through a hidden doorway in the library to someplace much, much worse."
+            "Body": "You exit through a hidden doorway in the library to someplace much, much worse.",
+            "Available": "False"
         }
     }
 }

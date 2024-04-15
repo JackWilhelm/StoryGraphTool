@@ -16,7 +16,10 @@ class Location extends Scene {
         
         if(locationData.Choices) { // TODO: check if the location has any Choices
             for(let choice of locationData.Choices) { // TODO: loop over the location's Choices
-                this.engine.addChoice(choice.Text, choice); // TODO: use the Text of the choice
+                let local = this.engine.storyData.Locations;
+                if ((!choice.Target || (!local[choice.Target].Available || local[choice.Target].Available == "True")) && (!choice.Available || choice.Available == "True")) {
+                    this.engine.addChoice(choice.Text, choice); // TODO: use the Text of the choice
+                }
                 // TODO: add a useful second argument to addChoice so that the current code of handleChoice below works
             }
         } else {
@@ -25,9 +28,15 @@ class Location extends Scene {
     }
 
     handleChoice(choice) {
-        if (choice && !choice.Target) {
+        if (choice && !choice.Target && choice.Destination) {
             this.engine.show("&gt; "+choice.Text);
             this.engine.gotoScene(Mechanism, choice);
+        }else if (choice && !choice.Target) {
+            choice.Available = "False";
+            this.engine.storyData.Locations[choice.Unlocks].Available = "True"
+            this.engine.storyData.Locations[choice.Source].Body = this.engine.storyData.Locations[choice.Source].Body2;
+            this.engine.show(choice.Response);
+            this.engine.gotoScene(Location, choice.Source);
         }else if(choice) {
             this.engine.show("&gt; "+choice.Text);
             this.engine.gotoScene(Location, choice.Target);
